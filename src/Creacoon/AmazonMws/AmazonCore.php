@@ -1,4 +1,6 @@
-<?php namespace Creacoon\AmazonMws;
+<?php 
+
+namespace Creacoon\AmazonMws;
 
 use Config, Log;
 
@@ -554,6 +556,8 @@ abstract class AmazonCore{
         $this->log("Making request to Amazon: ".$this->options['Action']);
         $response = $this->fetchURL($url,$param);
         
+        if (isset($response['error'])) $this->log("Making request to Amazon gave an error: ".$response['error']);
+
         while ($response['code'] == '503' && $this->throttleStop==false){
             $this->sleep();
             $response = $this->fetchURL($url,$param);

@@ -1,4 +1,6 @@
-<?php namespace Creacoon\AmazonMws;
+<?php 
+
+namespace Creacoon\AmazonMws;
 
 use Creacoon\AmazonMws\AmazonFeedsCore;
 /**
